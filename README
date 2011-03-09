@@ -27,10 +27,22 @@ mvn install:install-file -DgroupId=keystone -DartifactId=keystone -Dversion=1 -D
 
 
 c. Jython and Jython Libs folder have to be in the correct place.
-... When I would run the jar that Maven puts in the work/ path, I had the Lib folder in there, and Jython seemed to find it. I guess this 
-isn't technically required, but having the standard Python library is rather helpful for most things.
+... When I would run the jar that Maven puts in the work/ path, I had the Lib folder in there, and Jython seemed to find it. I guess this isn't technically required, but having the standard Python library is rather helpful for most things.
 
 d. OpenGL requires LD_LIBRARY_PATH to point to the location of the platform binary libraries
+
+
+Changes from traditional Processing:
+
+1. Draw actually executes all functions contained in a Jython list called "drawlist" ... simply mix in and out functions to be called, in order, and looped, in this list. This is trade off of various techniques, and I think exposes the functional styling of Python.
+
+2. The display is always in Present mode on each machine you run it on
+
+3. Where Processing overrides things in Java style where a function and a variable can be named the same depending on their strongly typed definition, these things have been renamed, and are listed as some of the first commands in Display.java. For instance, frameRate is a Jython function, but the current frame rate is always in the variable currentFrameRate. See Display.java for more info.
+
+4. Synchronization of running code is surprisingly fast over many machines, with minimal delays, but performance feedback is also welcome.
+
+
 
 Best of luck! Contributions very welcome.
 
