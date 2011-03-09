@@ -111,7 +111,7 @@
       </descriptorRefs>
       <archive>
         <manifest>
-          <mainClass>com.ohioheavydata.jython.Display</mainClass>
+          <mainClass>com.github.th0ma5w.live-jython-processing.Display</mainClass>
         </manifest>
       </archive>
     </configuration>
