@@ -53,6 +53,6 @@ public class Display extends PApplet {
 	}
   
 	public static void main(String args[]) {
-		PApplet.main(new String[] { "--present", "com.ohioheavydata.jython.Display" });
+		PApplet.main(new String[] { "--present", "com.github.th0ma5.live-jython-processing.Display" });
 	}
 }
