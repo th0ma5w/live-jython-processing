@@ -1,0 +1,39 @@
+This is an initial release of some unorganized code.
+
+This is:
+
+1. Jython, Processing, OpenGL, and several Processing libraries compiled into a JAR using Maven.
+2. A series of scripts for the Jython interpreter to bootstrap connections to an ActiveMQ or Stomp server
+3. Given the queues defined, this running process will wait for Jython code, and execute them interpreter style
+4. An example browser based editor that can send commands to the queue through a Stomp connection to ActiveMQ
+
+Some issues:
+
+a. May need some coaxing to get working, specifically you need to get Jython and Processing, ActiveMQ, and Stomp for Python elsewhere
+b. You will have to register the JARs with Maven for the mvn commands to work:
+
+
+Here is how to add Jython:
+
+mvn install:install-file -DgroupId=org.python -DartifactId=jython -Dversion=2.5.2b1 -Dpackaging=jar -Dfile=jython.jar
+
+Here is how to add Processing:
+
+mvn install:install-file -DgroupId=org.processing -DartifactId=processing-core -Dversion=0135-BETA -Dpackaging=jar -Dfile=core.jar
+
+Here is an example of how to add a specific Processing library JAR:
+
+mvn install:install-file -DgroupId=keystone -DartifactId=keystone -Dversion=1 -Dpackaging=jar -Dfile=keystone.jar
+
+
+c. Jython and Jython Libs folder have to be in the correct place.
+... When I would run the jar that Maven puts in the work/ path, I had the Lib folder in there, and Jython seemed to find it. I guess this 
+isn't technically required, but having the standard Python library is rather helpful for most things.
+
+d. OpenGL requires LD_LIBRARY_PATH to point to the location of the platform binary libraries
+
+Best of luck! Contributions very welcome.
+
+https://github.com/th0ma5w/live-jython-processing
+
+

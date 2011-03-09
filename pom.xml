@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.th0ma5w.live-jython-processing</groupId>
+  <artifactId>live-jython-processing</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>jython</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.processing</groupId>
+      <artifactId>processing-core</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>keystone</groupId>
+      <artifactId>keystone</artifactId>
+      <version>1</version>
+    </dependency>
+    <dependency>
+      <groupId>oscP5</groupId>
+      <artifactId>oscP5</artifactId>
+      <version>1</version>
+    </dependency>
+    <dependency>
+      <groupId>tuioZones</groupId>
+      <artifactId>tuioZones</artifactId>
+      <version>1</version>
+    </dependency>
+    <!-- Start OPENGL -->
+    <dependency>
+      <groupId>org.processing.opengl</groupId>
+      <artifactId>processing-opengl</artifactId>
+      <version>0135-BETA</version>
+    </dependency>
+    <dependency>
+      <groupId>org.processing.opengl</groupId>
+      <artifactId>processing-opengl-gluegen-rt</artifactId>
+      <version>0135-BETA</version>
+    </dependency>
+    <dependency>
+      <groupId>org.processing.opengl</groupId>
+      <artifactId>processing-opengl-jogl</artifactId>
+      <version>0135-BETA</version>
+    </dependency>
+    <!-- END OPENGL -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.python</groupId>
+      <artifactId>jython</artifactId>
+      <version>2.5.2b1</version>
+    </dependency>
+   <dependency>
+      <groupId>javax.jms</groupId>
+      <artifactId>jms</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+     <artifactId>activemq-core</artifactId>
+      <version>5.2.0</version>
+    </dependency>
+  </dependencies>
+<repositories>
+    <repository>
+      <id>jboss</id>
+      <url>http://repository.jboss.com/maven2</url>
+      <releases>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+<build>
+<plugins>
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <configuration>
+      <descriptorRefs>
+        <descriptorRef>jar-with-dependencies</descriptorRef>
+      </descriptorRefs>
+    </configuration>
+  </plugin>
+ <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <version>2.2</version>
+    <!-- nothing here -->
+  </plugin>
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <version>2.2-beta-4</version>
+    <configuration>
+      <descriptorRefs>
+        <descriptorRef>jar-with-dependencies</descriptorRef>
+      </descriptorRefs>
+      <archive>
+        <manifest>
+          <mainClass>com.ohioheavydata.jython.Display</mainClass>
+        </manifest>
+      </archive>
+    </configuration>
+    <executions>
+      <execution>
+        <phase>package</phase>
+        <goals>
+          <goal>single</goal>
+        </goals>
+      </execution>
+    </executions>
+  </plugin>
+</plugins>
+</build>
+</project>

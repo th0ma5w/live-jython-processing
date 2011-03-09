@@ -1,0 +1,21 @@
+mvn install:install-file -DgroupId=org.processing.opengl -DartifactId=processing-opengl -Dversion=0135-BETA -Dpackaging=jar -Dfile=opengl.jar
+mvn install:install-file -DgroupId=org.processing.opengl -DartifactId=processing-opengl-gluegen-rt -Dversion=0135-BETA -Dpackaging=jar -Dfile=gluegen-rt.jar
+mvn install:install-file -DgroupId=org.processing.opengl -DartifactId=processing-opengl-jogl -Dversion=0135-BETA -Dpackaging=jar -Dfile=jogl.jar
+
+
+    <dependency>
+      <groupId>org.processing.opengl</groupId>
+      <artifactId>processing-opengl</artifactId>
+      <version>0135-BETA</version>
+    </dependency>
+    <dependency>
+      <groupId>org.processing.opengl</groupId>
+      <artifactId>processing-opengl-gluegen-rt</artifactId>
+      <version>0135-BETA</version>
+    </dependency>
+    <dependency>
+      <groupId>org.processing.opengl</groupId>
+      <artifactId>processing-opengl-jogl</artifactId>
+      <version>0135-BETA</version>
+    </dependency>
+
